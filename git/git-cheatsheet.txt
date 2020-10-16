@@ -1,0 +1,59 @@
+>git init 
+Initalise a repo
+
+>git status
+Changes made between working directory files and the previous commit.
+
+working directory -> staging area -> repo
+
+All files are "untracked" by Git until it's been told otherwise.
+
+All files which are been worked upon are in the working directory. We can move any file to the staging area before comitting it.
+
+Scenario:-
+
+>git status
+
+modified : filename 
+( Changes made to a file in the working directory to a committed file not moved to the
+staging area)
+
+>git diff 
+Compare changes in current working directory to the previous commit. (Compares to the head commit by default.)
+
+>git diff <commit-hash>
+provide a hash of the commit as the parameter to compare with a different commit.
+
+>git diff <filename>
+Comapre changes made to a single file.
+
+>git difftool
+Load an external tool of choice to view the comparison. (Easier to read)
+
+** git diff will only comapre files in the working direcotry.
+
+>git diff --staged
+Compares files in the staging area.
+
+> git log - allows to view the history of repo and the commit log.
+
+>git log --pretty=format:"%h %an %ar - %s"
+To view each commit on a single line.
+
+>git show
+Changes made in the commit
+
+>git remote add origin 'url or ssh' 
+Add a remote repo to your current working directory as origin.
+
+>git show
+Changes made in the commit
+
+>git push 'repo name' 'branch' (probably the master branch)
+push your commits to the remote repository.
+
+>git pull
+Allows to make changes from a remote repo to your current repo.
+
+>git fetch
+Download the changes made to the repo in a different branch.

@@ -94,3 +94,32 @@ Switches the branch.
 
 >git merge <branchname>
 Merges the branch with the current branch.
+
+>git log -p
+To output the commit information with the changes made.
+
+>git log -p -n 2
+Limits the number of commits to display (-n 2) from HEAD and HEAD~1
+
+**FINDING BUGS USING BISECT**
+
+>git bisect start
+Enter the bisect mode.
+
+>git bisect bad
+Define where the bad commit happened. 
+
+>git bisect good HEAD~5
+Define where the good commit is (5 commits ago in our case). This  will checkout all the commits between the bad and good.
+
+>git bisect good
+Tells git that we are happy with the particular commit.
+
+>git blame <file>
+Shows the changes made and the name of the author. Shows who touched each line.
+
+>git blame -L 6,8 <filename>
+Can specify line numbers if we know the exact place the error occurs.
+
+
+

@@ -80,3 +80,14 @@ If not pushed yet,
 
 >git revert HEAD...HEAD~2
 Reverts commits between HEAD and HEAD~2.
+
+**Fixing Merge Errors**
+
+>git branch
+Lists the branches, and the current branch.
+
+>git branch <branchname> 
+Creates the branch if not present or switches to it.
+
+>git merge <branchname>
+Merges the branch with the current branch.

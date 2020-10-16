@@ -121,9 +121,5 @@ Shows the changes made and the name of the author. Shows who touched each line.
 >git blame -L 6,8 <filename>
 Can specify line numbers if we know the exact place the error occurs.
 
-**Being picky with git**
 
-When want to merge one single file from a branch to the master, or one particular commit.
-
->git cherry-pick 
 

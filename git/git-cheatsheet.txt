@@ -57,3 +57,26 @@ Allows to make changes from a remote repo to your current repo.
 
 >git fetch
 Download the changes made to the repo in a different branch.
+
+**UNDOING CHANGES**
+>git checkout .
+Replace everything in the current directory to the last committed version.
+
+>git checkout <filename>
+Will replace the filename provided.
+
+>git reset
+Move files back from the staging area to the working directory.
+
+>git reset --hard
+Combine both git reset and git checkout in a single command.
+
+>git revert
+Undo the commit already made.
+
+If not pushed yet, 
+
+>git reset HEAD (will do the same).
+
+>git revert HEAD...HEAD~2
+Reverts commits between HEAD and HEAD~2.

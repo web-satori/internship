@@ -43,6 +43,17 @@ To view each commit on a single line.
 >git show
 Changes made in the commit
 
+>git remote add origin 'url or ssh' 
+Add a remote repo to your current working directory as origin.
 
+>git show
+Changes made in the commit
 
+>git push 'repo name' 'branch' (probably the master branch)
+push your commits to the remote repository.
 
+>git pull
+Allows to make changes from a remote repo to your current repo.
+
+>git fetch
+Download the changes made to the repo in a different branch.

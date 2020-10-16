@@ -87,7 +87,10 @@ Reverts commits between HEAD and HEAD~2.
 Lists the branches, and the current branch.
 
 >git branch <branchname> 
-Creates the branch if not present or switches to it.
+Creates a branch.
+
+>git checkout branchname.
+Switches the branch. 
 
 >git merge <branchname>
 Merges the branch with the current branch.

@@ -1,22 +1,22 @@
 version: '1'
 services:
     falco:
-     image: sysdig/falco
-     volumes:
-        - ./var/run/docker.sock:/host/var/run/docker.sock \
+        image: sysdig/falco
+        volumes:
+           - ./var/run/docker.sock:/host/var/run/docker.sock \
            - ./dev:/host/dev \
            - ./proc:/host/proc:ro \
            - ./boot:/host/boot:ro \
            - ./lib/modules:/host/lib/modules:ro \
            - ./usr:/host/usr:ro \
-        - ./etc/falco/falco_rules.yaml:/etc/falco/falco_rules.yaml
-        - ./etc/falco/falco.yaml:/etc/falco/falco.yaml
+           - ./etc/falco/falco_rules.yaml:/etc/falco/falco_rules.yaml
+           - ./etc/falco/falco.yaml:/etc/falco/falco.yaml
 
-    links:
-              - fluentd
+        links:
+            -fluentd
         logging:
               driver: "fluentd"
-          options:
+        options:
             fluentd-address: localhost:8080
             tag: falco_events
 
@@ -29,23 +29,23 @@ services:
               - 9200:9200
               - 9300:9300
 
-      fluentd:
+    fluentd:
         build: ./fluentd
         volumes:
               - ./fluentd/conf:/fluentd/etc
               - ./logs:/logs
-     links:
+        links:
         - "elasticsearch"
         ports:
               - 8080:8080
 
 
 
-      kibana:
+    kibana:
         image: kibana
-         environment:
-              ELASTICSEARCH_URL: http://elasticsearch:9200
-     links:
-        - "elasticsearch"
+        environment:
+             ELASTICSEARCH_URL: http://elasticsearch:9200
+        links:
+            - "elasticsearch"
         ports:
               - 5601:5601
